@@ -1,0 +1,1856 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Zoe Meds LegitScript Website Action Tracker</title>
+<style>
+body{font-family:Arial,Helvetica,sans-serif;margin:0;background:#f6f8fb;color:#1f2937}
+header{background:#17365d;color:white;padding:24px 32px}
+h1{margin:0;font-size:24px} p{line-height:1.45}
+.container{padding:24px 32px}
+.cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:12px;margin:18px 0}
+.card{background:white;border:1px solid #dbe3ef;border-radius:12px;padding:16px;box-shadow:0 1px 3px #0001}
+.card .num{font-size:24px;font-weight:700;color:#17365d}
+.controls{position:sticky;top:0;background:#f6f8fb;padding:12px 0;z-index:5;display:flex;gap:10px;flex-wrap:wrap;align-items:center}
+button,select,input[type=search]{border:1px solid #cbd5e1;border-radius:8px;padding:10px;background:white}
+button{cursor:pointer}
+table{border-collapse:collapse;width:100%;background:white;font-size:13px}
+th,td{border:1px solid #e2e8f0;padding:10px;vertical-align:top}
+th{background:#17365d;color:white;position:sticky;top:58px;z-index:4}
+tr.completed{opacity:.55;background:#eef8ee}
+.priority{display:inline-block;padding:4px 8px;border-radius:999px;font-weight:700}
+.priority.high{background:#fee2e2;color:#991b1b}
+.priority.medium{background:#fef3c7;color:#92400e}
+.content{white-space:pre-wrap;max-width:420px}
+.revised{background:#f0fdf4}
+textarea{width:180px;min-height:80px;border:1px solid #cbd5e1;border-radius:6px}
+.notice{background:#fff7ed;border-left:6px solid #f97316;padding:14px 16px;margin:18px 0;border-radius:8px}
+.faq{background:#ffffff;border:1px solid #dbe3ef;border-radius:12px;padding:18px;margin-bottom:18px}
+small{color:#64748b}
+@media print{.controls, textarea, input[type=checkbox]{display:none} th{position:static}}
+</style>
+</head>
+<body>
+<header><h1>Zoe Meds LegitScript Website Remediation Tracker</h1><p>Client-facing tracker for required website corrections before certification review.</p></header>
+<div class="container">
+<div class="notice"><strong>Certification blocker notice:</strong> Items listed as High priority should be completed before submission or response. Blogs marked “Remove Page” should be removed because the flagged/prohibited content appears integrated throughout the page.</div>
+<div class="cards">
+  <div class="card"><div class="num">116</div><div>Total action items</div></div>
+  <div class="card"><div class="num">114</div><div>High priority</div></div>
+  <div class="card"><div class="num">5</div><div>Pages/blogs to remove</div></div>
+  <div class="card"><div class="num">46</div><div>Parkinson claim removals</div></div>
+</div>
+<div class="faq"><h2>Required FAQ to Post</h2><p><strong>Q:</strong> What states do you service for telehealth, and who provides telehealth services?</p><p><strong>A:</strong></p><p style="white-space:pre-wrap">Telehealth services are available in all 50 states.
+
+Telehealth services are provided by licensed medical providers affiliated with an independent physician group managed by OpenLoop Health, a third-party MSO: https://openloophealth.com/
+
+OpenLoop Health manages the pharmacy relationships.
+
+Clinical decisions and prescribing are the sole responsibility of the treating providers. Any medication-related questions should be directed to OpenLoop Health at 855-597-1248.</p></div>
+<div class="controls">
+  <input type="search" id="search" placeholder="Search page, title, content..." oninput="filterRows()">
+  <select id="cat" onchange="filterRows()"><option value="">All categories</option><option>Compounded medication claims</option><option>Remove Parkinson-related claims</option><option>Remove branded compounded med images</option><option>Remove page / blog blocker</option><option>Sexual health content</option><option>TRT claims</option></select>
+  <select id="pri" onchange="filterRows()"><option value="">All priorities</option><option>High</option><option>Medium</option><option>Low</option></select>
+  <button onclick="showIncomplete()">Show incomplete</button>
+  <button onclick="resetFilters()">Reset filters</button>
+  <button onclick="window.print()">Print / Save PDF</button>
+</div>
+<table id="tracker"><thead><tr>
+<th>Done</th><th>Priority</th><th>Category</th><th>Link</th><th>Page/Product</th><th>Location</th><th>Title</th><th>Original Content</th><th>Suggested Revised Content</th><th>Action Required</th><th>Client Notes</th>
+</tr></thead><tbody>
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk1" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/" target="_blank">Open page</a><br><small>https://zoemeds.com/</small></td>
+      <td>Home</td>
+      <td></td>
+      <td>Semaglutide Injection</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Vial</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note1" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk2" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/" target="_blank">Open page</a><br><small>https://zoemeds.com/</small></td>
+      <td>Home</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Container</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note2" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk3" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/" target="_blank">Open page</a><br><small>https://zoemeds.com/</small></td>
+      <td>Home</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Container</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note3" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk4" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/" target="_blank">Open page</a><br><small>https://zoemeds.com/</small></td>
+      <td>Home</td>
+      <td>Testosterone Replacement Therapy for Men</td>
+      <td>Testosterone Replacement Therapy for Men</td>
+      <td class="content">Boost energy, muscle tone, and libido with personalized TRT plans that restore healthy hormone levels.</td>
+      <td class="content revised">Personalized hormone treatment plans reviewed by licensed providers.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note4" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk5" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/category/weight-loss" target="_blank">Open page</a><br><small>https://zoemeds.com/category/weight-loss</small></td>
+      <td>Weight Loss Page</td>
+      <td></td>
+      <td>Weight Loss Solutions for Sustainable Results</td>
+      <td class="content">Weight Loss Solutions for Sustainable Results</td>
+      <td class="content revised">Medical Weight Management Options Reviewed by Licensed Providers</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note5" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk6" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/category/weight-loss" target="_blank">Open page</a><br><small>https://zoemeds.com/category/weight-loss</small></td>
+      <td>Weight Loss Page</td>
+      <td></td>
+      <td>Semaglutide Injection</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Vial</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note6" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk7" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/category/weight-loss" target="_blank">Open page</a><br><small>https://zoemeds.com/category/weight-loss</small></td>
+      <td>Weight Loss Page</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Vial</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note7" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk8" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/category/weight-loss" target="_blank">Open page</a><br><small>https://zoemeds.com/category/weight-loss</small></td>
+      <td>Weight Loss Page</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">Enjoy the benefits of Semaglutide without the needle - clinically proven weight loss in a simple daily pill.</td>
+      <td class="content revised">Enjoy the benefits of Semaglutide without the needle - in a simple daily pill.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note8" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk9" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/category/weight-loss" target="_blank">Open page</a><br><small>https://zoemeds.com/category/weight-loss</small></td>
+      <td>Weight Loss Page</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Container</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note9" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk10" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td></td>
+      <td>Semaglutide Injection</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Vial</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note10" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk11" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td></td>
+      <td>Semaglutide Injection</td>
+      <td class="content">Clinically Proven Weight Loss</td>
+      <td class="content revised">Prescription weight management treatment options evaluated by licensed providers.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note11" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk12" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td></td>
+      <td>Semaglutide Injection</td>
+      <td class="content">When paired with a calorie-controlled diet and regular physical activity, it helps support sustainable, long-term weight loss.</td>
+      <td class="content revised">Semaglutide is a prescription medication evaluated by licensed providers. Eligibility and treatment recommendations depend on individual clinical assessment.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note12" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk13" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td>Description</td>
+      <td>How to Take It</td>
+      <td class="content">Start with a low dose (e.g. 0.25 mg), increase every 4 weeks as tolerated up to maintenance dose (commonly 2.4 mg/week).</td>
+      <td class="content revised">If prescribed, dosing and administration instructions are determined by a licensed medical provider based on clinical evaluation, medical history, and individualized treatment considerations.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note13" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk14" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td>Description</td>
+      <td>Additional Information</td>
+      <td class="content">Efficacy: STEP trials showed ~15% mean loss of starting weight vs ~2–3% on placebo</td>
+      <td class="content revised">Treatment response varies by individual. Eligibility, formulation, and ongoing use are determined by the prescribing provider.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note14" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk15" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td>Description</td>
+      <td>Additional Information</td>
+      <td class="content">If discontinued, up to two‑thirds of lost weight may return within 1-year—long-term use is often needed for maintenance</td>
+      <td class="content revised">Patients should follow the instructions provided by their licensed medical provider and dispensing pharmacy.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note15" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk16" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-injection</small></td>
+      <td>Semaglutide Injection</td>
+      <td>FAQ</td>
+      <td>Is Semaglutide Injection the same as Ozempic or Wegovy?</td>
+      <td class="content">Yes—semaglutide is the active ingredient in both. Wegovy® is FDA‑approved for weight loss; Ozempic® is approved for diabetes but often used off‑label for weight loss.</td>
+      <td class="content revised">No- some commercially available medications contain semaglutide as an active ingredient. Treatment recommendations vary by patient and provider evaluation.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note16" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk17" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Vial</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note17" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk18" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">FDA Approved Type 2 Diabetes Treatment</td>
+      <td class="content revised">Prescription medication evaluated by licensed providers based on individual needs.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note18" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk19" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">FDA Approved for Weight Loss</td>
+      <td class="content revised">Prescription treatment option for weight management, when clinically appropriate.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note19" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk20" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td></td>
+      <td>Semaglutide Oral</td>
+      <td class="content">Oral Semaglutide is an FDA-approved medication used to help manage type 2 diabetes and promote weight loss.</td>
+      <td class="content revised">Treatment eligibility, formulation, and dosing are determined by a licensed medical provider following clinical evaluation.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note20" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk21" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td>Description</td>
+      <td>Oral Semaglutide</td>
+      <td class="content">Oral Semaglutide is an FDA-approved medication used to help manage type 2 diabetes and promote weight loss. It is an oral version of semaglutide, a GLP-1 (glucagon-like peptide-1) receptor agonist</td>
+      <td class="content revised">Oral Semaglutide  is an oral version of semaglutide, a GLP-1 (glucagon-like peptide-1) receptor agonist</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note21" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk22" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td>Description</td>
+      <td>Oral Semaglutide</td>
+      <td class="content">This medication works by regulating blood sugar levels, improving insulin sensitivity, and promoting weight loss, making it an effective option for individuals struggling with type 2 diabetes, obesity, and related health concerns.</td>
+      <td class="content revised">Treatment plans may be adjusted over time based on clinical considerations</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note22" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk23" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td>Description</td>
+      <td>Oral Semaglutide</td>
+      <td class="content">FDA Approval: Approved for the treatment of type 2 diabetes and weight management in 2021.</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note23" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk24" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Semaglutide Oral</td>
+      <td>Description</td>
+      <td>Oral Semaglutide</td>
+      <td class="content">Duration of Action: The medication remains effective throughout the day with a once-daily dose.</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note24" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk25" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Oral Semaglutide vs Ozempic vs Zepbound chart</td>
+      <td>FAQ</td>
+      <td>Is Oral Semaglutide covered by insurance?</td>
+      <td class="content">Oral Semaglutide is typically covered by most insurance plans, but coverage may vary. Check with your insurance provider to confirm if the medication is covered under your plan and to understand your out-of-pocket costs.</td>
+      <td class="content revised">Compounded medications are not covered by insurance. Patients are responsible for all out-of-pocket costs associated with compounded medications.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note25" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="Medium">
+      <td><input type="checkbox" id="chk26" onchange="saveState()"></td>
+      <td><span class="priority medium">Medium</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/semaglutide-oral#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/semaglutide-oral#product-information</small></td>
+      <td>Oral Semaglutide vs Ozempic vs Zepbound chart</td>
+      <td>FAQ</td>
+      <td>Is Oral Semaglutide effective for weight loss?</td>
+      <td class="content">Yes, Oral Semaglutide has been shown to help with weight loss in individuals with type 2 diabetes and obesity by reducing appetite and promoting a sense of fullness.</td>
+      <td class="content revised">Remove Question</td>
+      <td>Remove Question</td>
+      <td><textarea placeholder="Client notes..." id="note26" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk27" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">Medication Images – Remove Zoe Meds Branding from Compounded GLP-1 Labels
+Issue:</td>
+      <td class="content revised">Remove Branded Container</td>
+      <td>Replace branded medication images with:
+neutral packaging/ generic placeholder imagery</td>
+      <td><textarea placeholder="Client notes..." id="note27" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk28" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">FDA-approved Type-2 Diabetes Treatment</td>
+      <td class="content revised">Available by prescription following clinical evaluation and provider determination, when appropriate</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note28" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk29" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">FDA-approved for Weight Loss</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note29" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk30" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">Tirzepatide Injection is an innovative, FDA-approved medication used for the treatment of type 2 diabetes and obesity</td>
+      <td class="content revised">Tirzepatide injection may be prescribed by a licensed provider following clinical evaluation and consideration of an individual’s medical history and treatment goals.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note30" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk31" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td></td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">By acting on these two critical receptors, Tirzepatide Injection improves insulin sensitivity, reduces appetite, and helps regulate glucose levels, offering an effective, comprehensive approach to managing diabetes and obesity.</td>
+      <td class="content revised">By acting on these two critical receptors, Tirzepatide Injection may improve insulin sensitivity, reduces appetite, and helps regulate glucose levels.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note31" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk32" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>Description</td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">Tirzepatide Injection is an innovative, FDA-approved medication used for the treatment of type 2 diabetes and obesity.</td>
+      <td class="content revised">Tirzepatide Injection is an innovative medication.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note32" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk33" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>Description</td>
+      <td>Tirzepatide Injection</td>
+      <td class="content">By acting on these two critical receptors, Tirzepatide Injection improves insulin sensitivity, reduces appetite, and helps regulate glucose levels, offering an effective, comprehensive approach to managing diabetes and obesity.</td>
+      <td class="content revised">By acting on these two critical receptors, Tirzepatide Injection may improve insulin sensitivity, reduces appetite, and helps regulate glucose levels.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note33" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk34" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>Tirzepatide Injection Specifications</td>
+      <td>Dosage</td>
+      <td class="content">Starting dose is typically 2.5 mg once a week, which may be increased in increments based on individual needs and tolerability.</td>
+      <td class="content revised">Dosing is individualized and determined by a licensed provider</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note34" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk35" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>Tirzepatide Injection Specifications</td>
+      <td></td>
+      <td class="content">FDA Approval: Approved for type 2 diabetes and weight management in 2022.</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note35" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk36" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>How to Take Tirzepatide Injection?</td>
+      <td>Dosage:</td>
+      <td class="content">Follow your healthcare provider’s prescribed dosage, which typically starts at 2.5 mg per week and can be adjusted based on your response.</td>
+      <td class="content revised">Treatment plans may be adjusted over time based on clinical considerations</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note36" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="Medium">
+      <td><input type="checkbox" id="chk37" onchange="saveState()"></td>
+      <td><span class="priority medium">Medium</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>Important Notes:</td>
+      <td>Tirzepatide Injection vs Oral Tirzepatide vs Ozempic Chart</td>
+      <td class="content">Tirzepatide Injection vs Oral Tirzepatide vs Ozempic Chart</td>
+      <td class="content revised">Remove Chart - FDA Violation Flaged</td>
+      <td>Remove Chart - FDA Violation Flaged</td>
+      <td><textarea placeholder="Client notes..." id="note37" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk38" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/tirzepatide-injection" target="_blank">Open page</a><br><small>https://zoemeds.com/tirzepatide-injection</small></td>
+      <td>Tirzepatide Injection</td>
+      <td>FAQ</td>
+      <td>Is Tirzepatide Injection covered by insurance?</td>
+      <td class="content">Coverage for Tirzepatide may vary based on your insurance provider. Contact your insurance company to determine coverage options and out-of-pocket costs for Tirzepatide.</td>
+      <td class="content revised">Compounded medications are not covered by insurance. Patients are responsible for all out-of-pocket costs associated with compounded medications.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note38" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk39" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/category/testosterone-replacement-therapy" target="_blank">Open page</a><br><small>https://zoemeds.com/category/testosterone-replacement-therapy</small></td>
+      <td>TRT Services Page</td>
+      <td></td>
+      <td>Testosterone Replacement Therapy for Men</td>
+      <td class="content">Boost energy, muscle tone, and libido with personalized TRT plans that restore healthy hormone levels.</td>
+      <td class="content revised">Personalized TRT plans that help restore healthy hormone levels.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note39" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk40" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/category/testosterone-replacement-therapy" target="_blank">Open page</a><br><small>https://zoemeds.com/category/testosterone-replacement-therapy</small></td>
+      <td>TRT Services Page</td>
+      <td></td>
+      <td>Testosterone cypionate injection + anastrozole</td>
+      <td class="content">Restore energy, muscle, and mood with weekly injections - plus estrogen control for optimal hormonal balance.</td>
+      <td class="content revised">Prescription hormone therapy options based on clinical evaluation</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note40" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk41" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-cypionate-injection-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-cypionate-injection-anastrozole</small></td>
+      <td>Testosterone cypionate injection + anastrozole</td>
+      <td>Key Benefits</td>
+      <td>Enhanced Vitality</td>
+      <td class="content">Improved energy, libido, and lean muscle development.</td>
+      <td class="content revised">Treatment plans are individualized based on clinical evaluation</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note41" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk42" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-cypionate-injection-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-cypionate-injection-anastrozole</small></td>
+      <td>Testosterone cypionate injection + anastrozole</td>
+      <td>Medications</td>
+      <td>Testosterone Replacement Therapy for Men</td>
+      <td class="content">Boost energy, muscle tone, and libido with personalized TRT plans that restore healthy hormone levels.</td>
+      <td class="content revised">Testosterone therapy may be considered when clinically appropriate based on symptoms, medical history, and lab results</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note42" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk43" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-cypionate-injection-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-cypionate-injection-anastrozole</small></td>
+      <td>Testosterone cypionate injection + anastrozole</td>
+      <td>FAQ</td>
+      <td>When will I notice improvements?</td>
+      <td class="content">Energy and libido often improve within 2–4 weeks; full benefits on muscle tone and mood may take 2–3 months.</td>
+      <td class="content revised">Response to treatment varies by individual. Your provider will review your symptoms, lab results, and treatment progress to determine whether any adjustments are appropriate.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note43" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk44" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-gel-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-gel-anastrozole</small></td>
+      <td>Testosterone gel + anastrozole</td>
+      <td>Key Benefits</td>
+      <td>Supports Muscle &amp; Libido:</td>
+      <td class="content">Supports Muscle &amp; Libido:</td>
+      <td class="content revised">Treatment plans are individualized based on clinical evaluation</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note44" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk45" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-gel-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-gel-anastrozole</small></td>
+      <td>Testosterone gel + anastrozole</td>
+      <td>Key Benefits</td>
+      <td>Supports Muscle &amp; Libido:</td>
+      <td class="content">improved muscle strength, energy, and sexual function.</td>
+      <td class="content revised">Testosterone therapy may be considered when clinically appropriate based on symptoms, medical history, and lab results</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note45" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk46" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-gel-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-gel-anastrozole</small></td>
+      <td>Testosterone gel + anastrozole</td>
+      <td>FAQs</td>
+      <td>How soon will I feel benefits?</td>
+      <td class="content">Many users notice increased energy and libido within 2–4 weeks; muscle tone and mood improvements typically appear after 6–8 weeks.</td>
+      <td class="content revised">Patient responses vary. Please consult your provider.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note46" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk47" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-oral-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-oral-anastrozole</small></td>
+      <td>Testosterone oral + anastrozole</td>
+      <td>Oral Testosterone + Anastrozole</td>
+      <td>HOW IT WORKS</td>
+      <td class="content">This once‑daily pill delivers testosterone straight into your bloodstream to raise your hormone levels and then uses Anastrozole to block the enzyme that turns excess testosterone into estrogen, so you get the benefits of higher testosterone (better energy, libido, muscle strength) without estrogen‑driven issues like water retention or unwanted breast tissue growth.</td>
+      <td class="content revised">This once‑daily pill delivers testosterone straight into your bloodstream to raise your hormone levels and then uses Anastrozole to block the enzyme that turns excess testosterone into estrogen.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note47" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="TRT claims" data-priority="High">
+      <td><input type="checkbox" id="chk48" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>TRT claims</td>
+      <td><a href="https://zoemeds.com/testosterone-oral-anastrozole" target="_blank">Open page</a><br><small>https://zoemeds.com/testosterone-oral-anastrozole</small></td>
+      <td>Testosterone oral + anastrozole</td>
+      <td>FAQ</td>
+      <td>How quickly will I notice improvements?</td>
+      <td class="content">Many men experience increased energy and libido within 2–4 weeks; full-body composition and mood enhancements often occur after 2–3 months.</td>
+      <td class="content revised">Patient responses vary. Please consult your provider.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note48" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk49" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td class="content">Relief from Parkinson’s-related motor symptoms</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note49" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk50" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Target multiple health concerns with one powerful formula.</td>
+      <td class="content">Sildenafil, Tadalafil, and Apomorphine work together to enhance sexual health, cardiovascular performance, and motor control — offering a comprehensive solution for men facing erectile dysfunction, cardiovascular issues, and Parkinson’s-related symptoms.</td>
+      <td class="content revised">Sildenafil, Tadalafil, and Apomorphine work together to enhance sexual health, cardiovascular performance, and motor control — offering a comprehensive solution for men facing erectile dysfunction.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note50" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk51" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Sildenafil, Tadalafil, and Apomorphine</td>
+      <td class="content">work synergistically to target multiple health concerns, offering a powerful and versatile treatment option. Sildenafil and Tadalafil enhance sexual health and cardiovascular performance, while Apomorphine addresses motor control issues in Parkinson’s disease. Together, they provide comprehensive support for individuals managing erectile dysfunction, cardiovascular conditions, and Parkinson’s-related symptoms.</td>
+      <td class="content revised">Sildenafil and tadalafil may be prescribed by a licensed provider when clinically appropriate. Treatment eligibility, medication selection, and dosing are determined following a clinical evaluation and review of the patient’s medical history.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note51" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk52" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>Target multiple health concerns with one powerful formula.</td>
+      <td class="content">Sildenafil, Tadalafil, and Apomorphine work together to enhance sexual health, cardiovascular performance, and motor control, offering a comprehensive solution for men facing erectile dysfunction, cardiovascular issues, and Parkinson’s-related symptoms.</td>
+      <td class="content revised">Sildenafil, Tadalafil, and Apomorphine work together to enhance sexual health offering a comprehensive solution for men facing erectile dysfunction.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note52" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk53" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td></td>
+      <td class="content">Sildenafil, Tadalafil, and Apomorphine work synergistically to target multiple health concerns, offering a powerful and versatile treatment option. Sildenafil and Tadalafil enhance sexual health and cardiovascular performance, while Apomorphine addresses motor control issues in Parkinson’s disease. Together, they provide comprehensive support for individuals managing erectile dysfunction, cardiovascular conditions, and Parkinson’s-related symptoms.</td>
+      <td class="content revised">Sildenafil, Tadalafil, and Apomorphine work synergistically to target multiple health concerns providing comprehensive support for individuals managing erectile dysfunction.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note53" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk54" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>Key Benefits</td>
+      <td class="content">Relief from Parkinson’s-related motor symptoms</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note54" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk55" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>How It Works</td>
+      <td class="content">Apomorphine - Dopamine agonist to manage “off” episodes in Parkinson’s disease, improving movement and confidence.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note55" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk56" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>When to Take It</td>
+      <td class="content">Parkinson’s Symptoms: Use Apomorphine sublingually or by injection as prescribed during “off” periods.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note56" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk57" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>Apomorphine</td>
+      <td class="content">Duration: Short-acting relief during “off” episodes</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note57" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk58" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>Apomorphine</td>
+      <td class="content">Primary Uses: Motor control for Parkinson’s disease</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note58" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk59" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>FAQs</td>
+      <td>What is Sildenafil + Tadalafil + Apomorphine used for?</td>
+      <td class="content">This combination treats erectile dysfunction, improves cardiovascular function, and manages Parkinson’s motor symptoms.</td>
+      <td class="content revised">This combination treats erectile dysfunction</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note59" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk60" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>FAQs</td>
+      <td>How does Apomorphine work?</td>
+      <td class="content">It stimulates dopamine receptors to rapidly improve motor control in Parkinson’s patients during &quot;off&quot; episodes.</td>
+      <td class="content revised">Remove FAQ</td>
+      <td>Remove FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note60" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk61" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>FAQs</td>
+      <td>How should I take it?</td>
+      <td class="content">Sildenafil/Tadalafil: Oral tablets, based on sexual activity timing or daily schedule.
+Apomorphine: Sublingual film or injection for Parkinson’s-related motor symptoms.</td>
+      <td class="content revised">Sildenafil/Tadalafil: Oral tablets, based on sexual activity timing or daily schedule.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note61" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk62" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-110mg-tadalafil-22mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 110mg + Tadalafil 22mg + Apomorphine 3mg</td>
+      <td>FAQs</td>
+      <td>Can Parkinson’s patients use it?</td>
+      <td class="content">Yes. Apomorphine is specifically for Parkinson’s, and Sildenafil/Tadalafil can address common ED symptoms in Parkinson’s patients — but treatment must be guided by a doctor.</td>
+      <td class="content revised">Remove FAQ</td>
+      <td>Remove FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note62" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk63" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>Tadalafil + Apomorphine</td>
+      <td></td>
+      <td class="content">Long-lasting erectile support and Parkinson’s motor control, all in one solution.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note63" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk64" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td></td>
+      <td class="content">Tadalafil offers up to 36 hours of readiness, while Apomorphine helps manage motor symptoms, making it easier to live spontaneously and actively.</td>
+      <td class="content revised">Tadalafil offers up to 36 hours of readiness, making it easier to live spontaneously and actively.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note64" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk65" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td></td>
+      <td class="content">Tadalafil and Apomorphine work synergistically to address different health concerns, with Tadalafil providing long-lasting effects for sexual health and cardiovascular issues, while Apomorphine targets motor control in Parkinson’s disease. Together, they offer an effective, multi-faceted treatment approach.</td>
+      <td class="content revised">Tadalafil and Apomorphine work synergistically to provide  long-lasting effects for sexual health</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note65" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk66" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>How It Works</td>
+      <td>Tadalafil</td>
+      <td class="content">Long-acting PDE5 inhibitor for erectile dysfunction, PAH, and urinary symptoms.</td>
+      <td class="content revised">Long-acting PDE5 inhibitor for erectile dysfunction and urinary symptoms.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note66" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk67" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine</td>
+      <td class="content">Apomorphine — Dopamine agonist that helps with sudden motor dysfunction in Parkinson’s patient</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note67" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk68" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>How It Works</td>
+      <td class="content">This medication combines two powerful ingredients, Tadalafil and Apomorphine, each designed to address specific health conditions effectively. Tadalafil is a proven treatment for erectile dysfunction, pulmonary arterial hypertension, and benign prostatic hyperplasia, while Apomorphine helps manage &quot;off&quot; episodes associated with Parkinson&#x27;s disease. Together, they provide a versatile and comprehensive approach to managing both sexual health and neurological conditions.</td>
+      <td class="content revised">This medication combines two powerful ingredients, to treat treat for erectile dysfunction</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note68" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk69" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>When to Take It</td>
+      <td class="content">Parkinson’s Symptoms: Use Apomorphine during “off” episodes as needed.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note69" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk70" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Indications:</td>
+      <td class="content">Pulmonary arterial hypertension (PAH)</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note70" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk71" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Mechanism of Action</td>
+      <td class="content">Tadalafil works by inhibiting the PDE5 enzyme, promoting increased blood flow to the penis in response to sexual stimulation. It also relaxes the blood vessels in the lungs to improve exercise capacity in patients with PAH and alleviates urinary symptoms in patients with BPH.</td>
+      <td class="content revised">Tadalafil works by inhibiting the PDE5 enzyme, promoting increased blood flow to the penis in response to sexual stimulation.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note71" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk72" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>FDA Approval:</td>
+      <td class="content">FDA Approval:
+
+ED: November 2003
+
+Once-daily use for ED: January 2008
+
+PAH (Adcirca): May 2009
+
+BPH and concurrent ED/BPH: October 2011</td>
+      <td class="content revised">Compounded medication not FDA approved</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note72" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk73" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>Apomorphine Specifications</td>
+      <td>Indications:</td>
+      <td class="content">Treatment of acute, intermittent “off” episodes associated with Parkinson’s disease</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note73" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk74" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>Apomorphine Specifications</td>
+      <td>Indications:</td>
+      <td class="content">Diagnostic test for dopaminergic responsiveness in parkinsonian syndromes</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note74" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk75" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Administration:</td>
+      <td class="content">Sublingual film for acute episodes/ Subcutaneous injection for advanced Parkinson’s disease</td>
+      <td class="content revised">Remove Bullets</td>
+      <td>Remove Bullets</td>
+      <td><textarea placeholder="Client notes..." id="note75" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk76" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>How Tadalafil and Apomorphine Work Together?</td>
+      <td class="content">While Tadalafil and Apomorphine are used for different medical conditions, their combined action can have a complementary effect, especially in conditions where both sexual dysfunction and Parkinson&#x27;s disease symptoms are present. Here&#x27;s how they might work together:</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note76" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk77" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Tadalafil for Erectile Dysfunction:</td>
+      <td class="content">Effect on Sexual Function: For patients with Parkinson’s disease, sexual dysfunction is a common issue due to both the disease and the medications used to treat it. Tadalafil can help improve sexual performance and restore spontaneity by enhancing erectile function</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note77" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk78" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine for Parkinson’s Disease:</td>
+      <td class="content">Action: Apomorphine works as a dopamine agonist, activating dopamine receptors to help manage motor symptoms of Parkinson&#x27;s disease, such as muscle rigidity and tremors. It also helps control &quot;off&quot; episodes (periods where Parkinson’s medications are less effective).</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note78" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk79" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine for Parkinson’s Disease:</td>
+      <td class="content">Effect on Movement and Mood: Apomorphine can provide relief from the motor symptoms of Parkinson&#x27;s disease, allowing patients to engage in daily activities more easily, including sexual activity.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note79" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk80" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine for Parkinson’s Disease:</td>
+      <td class="content">Combined Effect in Patients with Parkinson&#x27;s Disease:
+
+Sexual Health: Parkinson’s disease can affect both sexual desire and the ability to perform sexually due to motor symptoms and the side effects of Parkinson’s medications. Tadalafil helps by improving erectile function, making sexual activity more comfortable and satisfying.
+
+Motor Control and Libido: Apomorphine, by managing the motor symptoms and improving &quot;off&quot; episodes, can enhance overall physical well-being, which indirectly may improve the patient&#x27;s ability to engage in sexual activity.
+
+Potential Synergy: For patients with Parkinson’s disease who also experience erectile dysfunction, the combination of Tadalafil and Apomorphine may provide a synergistic effect, improving both sexual function and overall quality of life.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note80" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk81" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine for Parkinson’s Disease:</td>
+      <td class="content">While Tadalafil addresses erectile dysfunction and Apomorphine manages Parkinson&#x27;s symptoms, their combined use can help improve both sexual health and motor function, offering a more holistic approach to managing the challenges posed by Parkinson’s disease. Always consult a doctor before combining these medications, as interactions and individual patient needs may vary.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note81" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk82" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>What is Tadalafil + Apomorphine used for?</td>
+      <td class="content">Tadalafil + Apomorphine is a combination medication used to treat male erectile dysfunction (ED), pulmonary arterial hypertension (PAH), and symptoms of benign prostatic hyperplasia (BPH). Apomorphine is used for managing motor control in Parkinson’s disease.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note82" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk83" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>How does Tadalafil work?</td>
+      <td class="content">Tadalafil is a phosphodiesterase type 5 (PDE5) inhibitor that increases blood flow to the penis during sexual stimulation, helping to treat ED. It also helps relax blood vessels in the lungs and prostate to improve symptoms of PAH and BPH.</td>
+      <td class="content revised">Tadalafil is a phosphodiesterase type 5 (PDE5) inhibitor that increases blood flow to the penis during sexual stimulation, helping to treat ED.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note83" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk84" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>How does Apomorphine work?</td>
+      <td class="content">Apomorphine is a dopamine receptor agonist that stimulates dopamine receptors in the brain, improving motor control in Parkinson’s disease and reducing &quot;off&quot; episodes associated with the condition.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note84" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk85" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/tadalafil-10mg-apomorphine-3mg#product-information</small></td>
+      <td>Tadalafil 10mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>Can I take Tadalafil + Apomorphine if I have Parkinson’s disease?</td>
+      <td class="content">Yes, Apomorphine is specifically used to treat motor control issues in Parkinson’s disease. However, always follow your doctor&#x27;s guidance on the right dosage and combination therapy.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note85" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk86" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/sildenafil" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td></td>
+      <td></td>
+      <td class="content">FDA-approved for ED and PAH</td>
+      <td class="content revised">Compounded medication not FDA approved</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note86" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove branded compounded med images" data-priority="High">
+      <td><input type="checkbox" id="chk87" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove branded compounded med images</td>
+      <td><a href="https://zoemeds.com/sildenafil" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td class="content">Sildenafil (generic Viagra®) is the active ingredient in the branded drug Viagra and is effective for treating erectile dysfunction but 90% cheaper</td>
+      <td class="content revised">Sildenafil may be prescribed by a licensed provider following clinical evaluation. Treatment eligibility, dosing, and medication selection are determined by the provider.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note87" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Compounded medication claims" data-priority="High">
+      <td><input type="checkbox" id="chk88" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Compounded medication claims</td>
+      <td><a href="https://zoemeds.com/sildenafil" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td>Description</td>
+      <td>Key Benefits</td>
+      <td class="content">Clinically proven for erectile dysfunction and pulmonary arterial hypertension (PAH)</td>
+      <td class="content revised">Clinically proven for erectile dysfunction</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note88" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk89" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafil" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td>FAQ</td>
+      <td>How It Works</td>
+      <td class="content">Sildenafil is a phosphodiesterase type 5 (PDE5) inhibitor. It increases blood flow to the penis during sexual stimulation by relaxing blood vessel walls, enabling a strong and sustained erection. It also improves blood circulation in the lungs for PAH treatment.</td>
+      <td class="content revised">Sildenafil is a phosphodiesterase type 5 (PDE5) inhibitor. It increases blood flow to the penis during sexual stimulation by relaxing blood vessel walls, enabling a strong and sustained erection.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note89" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk90" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafil" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td>FAQ</td>
+      <td>Why is this Sildenafil prescribed?</td>
+      <td class="content">Sildenafil (commonly known as Viagra) is used to treat erectile dysfunction (ED), the inability to get or maintain an erection. It works by increasing blood flow to the penis during sexual stimulation, helping to produce an erection.
+
+Sildenafil is also available under the brand names Liqrev and Revatio, which are prescribed to improve exercise capacity in adults and children (ages 1 and older) with pulmonary arterial hypertension (PAH), a type of high blood pressure that affects the arteries in the lungs and causes symptoms like shortness of breath, dizziness, and fatigue. For PAH, sildenafil works by relaxing the blood vessels in the lungs, making it easier for blood to flow.
+
+Sildenafil belongs to a class of drugs called phosphodiesterase (PDE) inhibitors.
+
+It’s important to note that sildenafil does not cure ED or increase sexual desire. It also doesn’t prevent pregnancy or protect against sexually transmitted infections, including HIV.</td>
+      <td class="content revised">Sildenafil, commonly associated with Viagra®, may be prescribed by a licensed provider for erectile dysfunction when clinically appropriate. Sildenafil belongs to a class of medications called phosphodiesterase (PDE) inhibitors. It’s important to note that sildenafil does not cure ED or increase sexual desire. It also doesn’t prevent pregnancy or protect against sexually transmitted infections, including HIV. Complete an online consultation for provider review.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note90" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk91" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafil" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td>FAQ</td>
+      <td>How should Sildenafil be used?</td>
+      <td class="content">Sildenafil is available as a tablet and a liquid suspension, both taken by mouth.
+
+For erectile dysfunction (ED):
+Take sildenafil only as needed, following your doctor’s instructions. It&#x27;s usually best to take it about one hour before sexual activity, but it can be taken anywhere from 30 minutes to 4 hours beforehand. Do not take more than one dose in a 24-hour period unless advised otherwise by your doctor. Sildenafil can be taken with or without food, but a high-fat meal may delay how quickly it works.
+
+For pulmonary arterial hypertension (PAH):
+If you&#x27;re using sildenafil for PAH, it&#x27;s typically taken three times a day, with or without food, at evenly spaced times. Try to take it at the same times each day for the best results.
+
+Always follow the directions on your prescription label, and consult your doctor or pharmacist if anything is unclear. Never change your dose or frequency without medical advice.
+
+For the liquid form:
+Shake the bottle well for at least 10 seconds before each dose to ensure the medication is mixed properly. Use the oral syringe provided to measure your dose accurately, and follow the manufacturer’s instructions for use and cleaning. Do not mix the liquid with other medications or add flavorings.
+
+Your doctor may adjust your dose based on how well it works for you and whether you experience any side effects. If you’re taking sildenafil for ED and it’s not effective, or you&#x27;re having side effects, let your doctor know.
+
+If you&#x27;re taking it for PAH, remember that sildenafil manages the condition but doesn&#x27;t cure it. Keep taking it as prescribed, even if you feel fine. Do not stop without consulting your doctor.
+
+You can also ask your pharmacist or doctor for the manufacturer’s patient information for more details.</td>
+      <td class="content revised">For erectile dysfunction (ED):
+Take sildenafil only as needed, following your doctor’s instructions. It&#x27;s usually best to take it about one hour before sexual activity, but it can be taken anywhere from 30 minutes to 4 hours beforehand. Do not take more than one dose in a 24-hour period unless advised otherwise by your doctor. Sildenafil can be taken with or without food, but a high-fat meal may delay how quickly it works.
+
+Always follow the directions on your prescription label, and consult your doctor or pharmacist if anything is unclear. Never change your dose or frequency without medical advice.
+
+For the liquid form:
+Shake the bottle well for at least 10 seconds before each dose to ensure the medication is mixed properly. Use the oral syringe provided to measure your dose accurately, and follow the manufacturer’s instructions for use and cleaning. Do not mix the liquid with other medications or add flavorings.
+
+Your doctor may adjust your dose based on how well it works for you and whether you experience any side effects. If you’re taking sildenafil for ED and it’s not effective, or you&#x27;re having side effects, let your doctor know.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note91" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk92" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafi" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafi</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td>Sildenafil 25mg/50mg/100mg: FAQs</td>
+      <td>How does viagra work?</td>
+      <td class="content">Viagra (sildenafil) helps you get and keep an erection by improving blood flow where it matters.
+It works by relaxing the blood vessels in the penis, making it easier for blood to flow in when you&#x27;re sexually aroused. The key ingredient, sildenafil, is part of a group of medications called PDE5 inhibitors—they block an enzyme that normally restricts blood flow.
+So, when you&#x27;re in the mood and there&#x27;s stimulation, Viagra gives your body the support it needs to respond naturally.
+It doesn&#x27;t increase sexual desire or cause automatic erections—you still need to be turned on for it to work.
+With Zoe Meds, you can get this treatment with no awkward in-person visits, just an online consult and discreet monthly delivery.
+Other uses for Sildenafil
+This medication may also be used for other purposes—talk to your doctor or pharmacist if you’d like to learn more.
+
+What to tell your doctor before taking sildenafi
+Before starting sildenafil (Viagra, Revatio, or Liqrev), it’s important to share the following information with your doctor or pharmacist:
+Allergies: Let them know if you’re allergic to sildenafil, any ingredients in the medication, or any other drugs. Your pharmacist can provide a full list of ingredients.
+Medications:
+Some medicines should not be taken with sildenafil. Tell your doctor if you use:
+Nitrates (for chest pain), such as nitroglycerin, isosorbide dinitrate (Isordil), or isosorbide mononitrate (Monoket)
+Street drugs containing nitrates (like “poppers” such as amyl nitrate or butyl nitrite)
+Any prescription, over-the-counter, herbal, or vitamin supplements, including St. John’s wort and cimetidine (Tagamet HB)
+Always check with your doctor before starting, stopping, or changing any medications while taking sildenafil
+Health conditions:
+Let your doctor know if you have or have had:
+Heart issues (e.g., heart attack, irregular heartbeat, heart surgery in the last 6 months, chest pain during sex)
+Blood pressure problems (high or low)
+Liver or kidney disease
+Diabetes
+Eye conditions like retinitis pigmentosa or sudden vision loss
+Any issues with your blood (e.g., sickle cell anemia, leukemia, multiple myeloma)
+Peyronie’s disease or other penis shape conditions
+A history of erections lasting more than 4 hours
+Significant dehydration (from illness, sweating, vomiting, or diarrhea)
+Pulmonary veno-occlusive disease (PVOD)
+Bleeding disorders or ulcers
+If you’re pregnant or breastfeeding (for women taking sildenafil for PAH): Let your doctor know if you’re pregnant, planning to become pregnant, or nursing. Call your doctor if you become pregnant while on treatment.
+Surgery or dental work: Tell your surgeon or dentist that you’re taking sildenafil before any procedure.
+
+Sexual activity warnings (for ED treatment):
+If you’ve been told to avoid sex due to a medical condition, or if you’ve had chest pain during sex before, tell your doctor. Sexual activity can strain the heart—if you experience chest pain, dizziness, or nausea during sex, stop and seek medical attention immediately.
+Emergency care: Always inform healthcare providers that you&#x27;re taking sildenafil. In case of a heart-related emergency, they’ll need to know when you last took your dose.</td>
+      <td class="content revised">Viagra (sildenafil) helps you get and keep an erection by improving blood flow where it matters.
+
+It works by relaxing the blood vessels in the penis, making it easier for blood to flow in when you&#x27;re sexually aroused. The key ingredient, sildenafil, is part of a group of medications called PDE5 inhibitors—they block an enzyme that normally restricts blood flow.
+
+So, when you&#x27;re in the mood and there&#x27;s stimulation, Viagra gives your body the support it needs to respond naturally.
+
+It doesn&#x27;t increase sexual desire or cause automatic erections—you still need to be turned on for it to work.
+
+With Zoe Meds, you can get this treatment with no awkward in-person visits, just an online consult and discreet monthly delivery.
+
+
+What to tell your doctor before taking sildenafi
+Before starting sildenafil it’s important to share the following information with your doctor or pharmacist:
+
+Allergies: 
+Medications:
+Health conditions:
+Let your doctor know if you have or have had:
+Heart issues (e.g., heart attack, irregular heartbeat, heart surgery in the last 6 months, chest pain during sex)
+Blood pressure problems (high or low)
+Liver or kidney disease
+Diabetes
+Eye conditions like retinitis pigmentosa or sudden vision loss
+Any issues with your blood (e.g., sickle cell anemia, leukemia, multiple myeloma)
+Peyronie’s disease or other penis shape conditions
+A history of erections lasting more than 4 hours
+Significant dehydration (from illness, sweating, vomiting, or diarrhea)
+Pulmonary veno-occlusive disease (PVOD)
+Bleeding disorders or ulcers
+Surgery or dental work: Tell your surgeon or dentist that you’re taking sildenafil before any procedure.
+Sexual activity warnings (for ED treatment):
+If you’ve been told to avoid sex due to a medical condition, or if you’ve had chest pain during sex before, tell your doctor. Sexual activity can strain the heart—if you experience chest pain, dizziness, or nausea during sex, stop and seek medical attention immediately.
+Emergency care: Always inform healthcare providers that you&#x27;re taking sildenafil. In case of a heart-related emergency, they’ll need to know when you last took your dose.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note92" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk93" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafi" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafi</small></td>
+      <td>Sildenafil 25mg/50mg/100mg</td>
+      <td>FAQ</td>
+      <td>What should I do if I forget a dose?</td>
+      <td class="content">If you&#x27;re taking sildenafil for erectile dysfunction, missing a dose isn’t usually a concern since it’s taken only as needed.
+
+If you&#x27;re using sildenafil for PAH, take a missed dose as soon as you remember—unless it’s nearly time for your next dose. In that case, skip the missed dose and stick to your regular schedule. Don’t take two doses at once to make up for it.</td>
+      <td class="content revised">If you&#x27;re taking sildenafil for erectile dysfunction, missing a dose isn’t usually a concern since it’s taken only as needed.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note93" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk94" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td class="content">Relief from &quot;off&quot; motor episodes in Parkinson’s disease</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note94" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk95" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td class="content">Address erectile dysfunction and Parkinson’s motor symptoms simultaneously. This dual-action formula combines the rapid erectile support of Sildenafil with the motor-control benefits of Apomorphine, enhancing both physical performance and daily mobility.</td>
+      <td class="content revised">Address erectile dysfunction.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note95" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk96" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td class="content">Sildenafil &amp; Apomorphine is a powerful combination medication blends Sildenafil and Apomorphine to address both erectile dysfunction (ED) and motor control issues in Parkinson’s disease. With its dual-action approach, it provides benefits for individuals facing both sexual health concerns and Parkinson’s-related symptoms. Sildenafil, a PDE5 inhibitor, promotes blood flow for ED, while Apomorphine, a dopamine agonist, helps manage motor function in Parkinson’s patients. Together, they offer comprehensive relief for improved quality of life. Works in just 30–60 minutes schedule. Effects can last for up to 6 hours</td>
+      <td class="content revised">Sildenafil &amp; Apomorphine is a powerful combination medication blends Sildenafil and Apomorphine to address both erectile dysfunction (ED) Together, they offer comprehensive relief for improved quality of life. Works in just 30–60 minutes schedule. Effects can last for up to 6 hours</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note96" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk97" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td></td>
+      <td class="content">Address erectile dysfunction and Parkinson’s motor symptoms simultaneously.This dual-action formula combines the rapid erectile support of Sildenafil with the motor-control benefits of Apomorphine, enhancing both physical performance and daily mobility.
+Sildenafil &amp; Apomorphine is a powerful combination medication blends Sildenafil and Apomorphine to address both erectile dysfunction (ED) and motor control issues in Parkinson’s disease. With its dual-action approach, it provides benefits for individuals facing both sexual health concerns and Parkinson’s-related symptoms. Sildenafil, a PDE5 inhibitor, promotes blood flow for ED, while Apomorphine, a dopamine agonist, helps manage motor function in Parkinson’s patients. Together, they offer comprehensive relief for improved quality of life.</td>
+      <td class="content revised">Sildenafil &amp; Apomorphine is a powerful combination medication blends Sildenafil and Apomorphine to address erectile dysfunction (ED) Together, they offer comprehensive relief for improved quality of life.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note97" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk98" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>How It Works</td>
+      <td class="content">Apomorphine - Dopamine agonist that quickly restores movement during Parkinson’s-related “off” episodes.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note98" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk99" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>When to Take It</td>
+      <td class="content">Parkinson’s Symptoms: Use Apomorphine sublingually or via injection as prescribed during motor “off” periods.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note99" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk100" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>Key Benefits</td>
+      <td class="content">Relief from &quot;off&quot; motor episodes in Parkinson’s disease</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note100" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk101" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>Description</td>
+      <td>Key Benefits</td>
+      <td class="content">Improved quality of life and physical activity</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note101" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk102" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td></td>
+      <td class="content">MEDICATION COMPARISON CHART INDICATING PARKINSON - MUST GO FLAGGED</td>
+      <td class="content revised">Remove all Parkinsons related CONTENT INCLUDING CHART</td>
+      <td>Remove all Parkinsons related CONTENT INCLUDING CHART</td>
+      <td><textarea placeholder="Client notes..." id="note102" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk103" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Sildenafil Specifications</td>
+      <td class="content">FDA Approval: Sildenafil was approved by the U.S. Food and Drug Administration (FDA) in 1998 for the treatment of erectile dysfunction (ED) and later for pulmonary arterial hypertension (PAH) in 2005.</td>
+      <td class="content revised">Compounded medication not FDA approved</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note103" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk104" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td></td>
+      <td class="content">Other Uses: In addition to ED, it is used for pulmonary hypertension, Raynaud’s phenomenon, and high-altitude pulmonary edema.</td>
+      <td class="content revised">Remove Bullet</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note104" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk105" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine HCl Specifications</td>
+      <td class="content">FDA Approval: Apomorphine was approved by the FDA for the treatment of acute ‘off’ episodes in Parkinson&#x27;s disease in 2004 and is available in sublingual film and injectable forms.
+Purpose: Used to treat acute ‘off’ episodes in Parkinson’s disease and assist with motor control in patients experiencing advanced stages of the disease.
+Mechanism of Action: Apomorphine acts as a dopamine agonist, stimulating dopamine receptors in the brain to improve movement and reduce symptoms of Parkinson’s disease.
+Administration: Available as a sublingual film or subcutaneous injection.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note105" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk106" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td></td>
+      <td>Apomorphine HCl Specifications</td>
+      <td class="content">Side Effects: Common side effects include nausea and vomiting, which are managed by co-administering trimethobenzamide. Other potential effects include hypotension, sleep onset during daily activities, and impulse control symptoms.
+Precautions: Use with caution in patients taking 5-HT3 antagonists due to the risk of low blood pressure and loss of consciousness.
+Other Considerations: Apomorphine&#x27;s therapeutic effects on parkinsonian motor control are comparable to levodopa, making it a critical treatment for &#x27;off&#x27; episodes that do not respond to oral medications. 
+
+This combination therapy offers comprehensive treatment for individuals facing both sexual and motor function challenges. Always consult with a healthcare provider before starting treatment to ensure it&#x27;s the right solution for your needs.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>Remove Content</td>
+      <td><textarea placeholder="Client notes..." id="note106" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk107" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>How does the Sildenafil &amp; Apomorphine Combo work?</td>
+      <td class="content">How does the Sildenafil &amp; Apomorphine Combo work?
+The Sildenafil &amp; Apomorphine Combo works by targeting two different systems in the body to support both sexual health and motor control.
+
+Sildenafil helps improve erectile function by enhancing the natural erection process. During sexual stimulation, nitric oxide is released in the penis, which increases levels of cGMP—a molecule that relaxes the smooth muscle and increases blood flow for an erection. Normally, an enzyme called PDE-5 breaks down cGMP, ending the erection. Sildenafil blocks PDE-5, allowing cGMP to remain active longer, resulting in stronger and longer-lasting erections. Sildenafil also acts on the lungs&#x27; blood vessels, helping lower pulmonary pressure.
+Apomorphine works on the brain’s dopamine receptors, mainly by activating D2 receptors. Dopamine is crucial for controlling movement, and apomorphine mimics its effects. This helps improve motor control issues, especially for patients experiencing &quot;off&quot; episodes in Parkinson’s disease. Although it is a derivative of morphine, apomorphine doesn&#x27;t produce typical narcotic effects like euphoria, but it can cause nausea or drowsiness.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>REMOVE FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note107" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk108" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>What is the Sildenafil &amp; Apomorphine Combo used for?</td>
+      <td class="content">This combo is designed to support erectile function and improve motor control, particularly benefiting men experiencing both erectile dysfunction (ED) and motor &quot;off&quot; episodes related to Parkinson’s disease.</td>
+      <td class="content revised">This  is designed to support erectile function</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note108" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Sexual health content" data-priority="High">
+      <td><input type="checkbox" id="chk109" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Sexual health content</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>How does the combo medication work?</td>
+      <td class="content">Sildenafil enhances blood flow to the penis by blocking the breakdown of cGMP, supporting erections during sexual stimulation. Apomorphine acts on dopamine receptors in the brain to improve motor control and reduce movement difficulties.</td>
+      <td class="content revised">Sildenafil enhances blood flow to the penis by blocking the breakdown of cGMP, supporting erections during sexual stimulation.</td>
+      <td>Replace original content with Revised Content</td>
+      <td><textarea placeholder="Client notes..." id="note109" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk110" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>Can I use this combo if I don’t have Parkinson’s disease?</td>
+      <td class="content">Yes. While Apomorphine is mainly used for Parkinson’s symptoms, the combo may be prescribed off-label to assist with certain sexual health issues where dopamine pathways are involved. Always follow your healthcare provider’s recommendation.</td>
+      <td class="content revised">Remove all Parkinsons related Content</td>
+      <td>REMOVE FAQ</td>
+      <td><textarea placeholder="Client notes..." id="note110" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove Parkinson-related claims" data-priority="High">
+      <td><input type="checkbox" id="chk111" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove Parkinson-related claims</td>
+      <td><a href="https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information" target="_blank">Open page</a><br><small>https://zoemeds.com/sildenafil-50mg-apomorphine-3mg#product-information</small></td>
+      <td>Sildenafil 50mg + Apomorphine 3mg</td>
+      <td>FAQ</td>
+      <td>Is this combo FDA-approved?</td>
+      <td class="content">Both Sildenafil and Apomorphine are FDA-approved individually for their respective uses (ED and Parkinson’s &quot;off&quot; episodes). However, their combined use as a single therapy is considered off-label and should be prescribed by a healthcare provider.</td>
+      <td class="content revised">Compounded medication not FDA approved</td>
+      <td>Remove Bullet</td>
+      <td><textarea placeholder="Client notes..." id="note111" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove page / blog blocker" data-priority="High">
+      <td><input type="checkbox" id="chk112" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove page / blog blocker</td>
+      <td><a href="https://zoemeds.com/blog/semaglutide-before-and-after-real-results-timeline-and-what-to-expect" target="_blank">Open page</a><br><small>https://zoemeds.com/blog/semaglutide-before-and-after-real-results-timeline-and-what-to-expect</small></td>
+      <td>Blog</td>
+      <td></td>
+      <td></td>
+      <td class="content">REMOVE PAGE</td>
+      <td class="content revised">This page is a barrier to achieve  LegitScript certification.</td>
+      <td>FALSE</td>
+      <td><textarea placeholder="Client notes..." id="note112" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove page / blog blocker" data-priority="High">
+      <td><input type="checkbox" id="chk113" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove page / blog blocker</td>
+      <td><a href="https://zoemeds.com/blog/glp-1s-for-weight-loss-virtual-evaluations-and-online-treatment" target="_blank">Open page</a><br><small>https://zoemeds.com/blog/glp-1s-for-weight-loss-virtual-evaluations-and-online-treatment</small></td>
+      <td>Blog</td>
+      <td></td>
+      <td></td>
+      <td class="content">REMOVE PAGE</td>
+      <td class="content revised">This page is a barrier to achieve  LegitScript certification.</td>
+      <td>FALSE</td>
+      <td><textarea placeholder="Client notes..." id="note113" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove page / blog blocker" data-priority="High">
+      <td><input type="checkbox" id="chk114" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove page / blog blocker</td>
+      <td><a href="https://zoemeds.com/blog/how-testosterone-affects-weight-loss-and-body-composition" target="_blank">Open page</a><br><small>https://zoemeds.com/blog/how-testosterone-affects-weight-loss-and-body-composition</small></td>
+      <td>Blog</td>
+      <td></td>
+      <td></td>
+      <td class="content">REMOVE PAGE</td>
+      <td class="content revised">This page is a barrier to achieve  LegitScript certification.</td>
+      <td>FALSE</td>
+      <td><textarea placeholder="Client notes..." id="note114" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove page / blog blocker" data-priority="High">
+      <td><input type="checkbox" id="chk115" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove page / blog blocker</td>
+      <td><a href="https://zoemeds.com/blog/how-testosterone-impacts-mens-energy-mood-and-performance" target="_blank">Open page</a><br><small>https://zoemeds.com/blog/how-testosterone-impacts-mens-energy-mood-and-performance</small></td>
+      <td>Blog</td>
+      <td></td>
+      <td></td>
+      <td class="content">REMOVE PAGE</td>
+      <td class="content revised">This page is a barrier to achieve  LegitScript certification.</td>
+      <td>FALSE</td>
+      <td><textarea placeholder="Client notes..." id="note115" onchange="saveState()"></textarea></td>
+    </tr>
+    
+    <tr data-category="Remove page / blog blocker" data-priority="High">
+      <td><input type="checkbox" id="chk116" onchange="saveState()"></td>
+      <td><span class="priority high">High</span></td>
+      <td>Remove page / blog blocker</td>
+      <td><a href="https://zoemeds.com/blog/testosterone-replacement-therapy-trt-how-it-works-and-who-its-for" target="_blank">Open page</a><br><small>https://zoemeds.com/blog/testosterone-replacement-therapy-trt-how-it-works-and-who-its-for</small></td>
+      <td>Blog</td>
+      <td></td>
+      <td></td>
+      <td class="content">REMOVE PAGE</td>
+      <td class="content revised">This page is a barrier to achieve  LegitScript certification.</td>
+      <td>FALSE</td>
+      <td><textarea placeholder="Client notes..." id="note116" onchange="saveState()"></textarea></td>
+    </tr>
+    </tbody></table>
+</div>
+<script>
+function saveState(){
+ const data={};
+ document.querySelectorAll('input[type=checkbox]').forEach(cb=>{data[cb.id]=cb.checked; cb.closest('tr').classList.toggle('completed', cb.checked);});
+ document.querySelectorAll('textarea').forEach(t=>data[t.id]=t.value);
+ localStorage.setItem('zoeMedsTracker', JSON.stringify(data));
+}
+function loadState(){
+ const data=JSON.parse(localStorage.getItem('zoeMedsTracker')||'{}');
+ Object.entries(data).forEach(([id,val])=>{const el=document.getElementById(id); if(el){ if(el.type==='checkbox'){el.checked=val; el.closest('tr').classList.toggle('completed', val);} else el.value=val; }});
+}
+function filterRows(){
+ const q=document.getElementById('search').value.toLowerCase(), cat=document.getElementById('cat').value, pri=document.getElementById('pri').value;
+ document.querySelectorAll('#tracker tbody tr').forEach(tr=>{
+   const okQ=!q || tr.innerText.toLowerCase().includes(q);
+   const okC=!cat || tr.dataset.category===cat;
+   const okP=!pri || tr.dataset.priority===pri;
+   tr.style.display=(okQ&&okC&&okP)?'':'none';
+ });
+}
+function showIncomplete(){document.querySelectorAll('#tracker tbody tr').forEach(tr=>{const cb=tr.querySelector('input[type=checkbox]'); tr.style.display=cb.checked?'none':'';})}
+function resetFilters(){document.getElementById('search').value='';document.getElementById('cat').value='';document.getElementById('pri').value='';filterRows();}
+loadState();
+</script>
+</body></html>
